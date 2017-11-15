@@ -5,6 +5,8 @@ define(function(require) {
 
   var Typist = ComponentView.extend({
     postRender: function() {
+      this.$('.text').css('font-size', this.model.get('fontSize'));
+
       this.setReadyStatus();
       this.$el.on('inview', _.bind(this.inview, this));
     },
