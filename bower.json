@@ -1,0 +1,16 @@
+{
+  "name": "adapt-typist",
+  "version": "0.0.1",
+  "framework": "2",
+  "homepage": "https://github.com/taylortom/adapt-typist",
+  "issues": "https://github.com/taylortom/adapt-typist/issues",
+  "displayName" : "Typist",
+  "component" : "typist",
+  "description": "A self-typing text component",
+  "main": "/js/adapt-typist.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-component"
+  ],
+  "license": "GPLv3"
+}

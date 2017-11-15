@@ -1,0 +1,25 @@
+{
+  "type":"object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "properties":{
+    "texts": {
+      "type": "array",
+      "required": true,
+      "default": "",
+      "inputType": "List",
+      "validators": [],
+      "help": "The texts to display",
+      "translatable": true
+    },
+    "loop": {
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "Should the animation loop once it reaches the end?"
+    }
+  }
+}
