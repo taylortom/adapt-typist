@@ -20,6 +20,14 @@
       "inputType": "Checkbox",
       "validators": [],
       "help": "Should the animation loop once it reaches the end?"
+    },
+    "fontSize": {
+      "type": "string",
+      "required": false,
+      "default": "20",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Size of the text in px"
     }
   }
 }
