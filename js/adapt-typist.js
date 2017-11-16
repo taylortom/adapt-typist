@@ -5,7 +5,14 @@ define(function(require) {
 
   var Typist = ComponentView.extend({
     postRender: function() {
-      this.$('.text').css('font-size', this.model.get('fontSize'));
+      this.$('.text')
+        .css({
+          'font-size': this.model.get('fontSize') + 'px'
+        })
+        .typist({
+          speed: 200,
+          text: this.model.get('initialText')
+        });
 
       this.setReadyStatus();
       this.$el.on('inview', _.bind(this.inview, this));
@@ -22,7 +29,7 @@ define(function(require) {
     },
 
     showText: function() {
-      var $text = $('.text');
+      var $text = this.$('.text');
       var index = -1;
       var texts = this.model.get('texts');
       var loop = this.model.get('loop');
@@ -36,7 +43,9 @@ define(function(require) {
       $text.on('end_type.typist', function() {
         $text.typistPause(1000).typistRemove($text.text().length, _next);
     	});
-      window.setTimeout(_next, 500);
+      window.setTimeout(function() {
+        $text.typistRemove($text.text().length, _next);
+      }, 1500);
     },
 
     remove: function() {

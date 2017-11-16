@@ -4,6 +4,14 @@
   "id": "http://jsonschema.net",
   "$ref": "http://localhost/plugins/content/component/model.schema",
   "properties":{
+    "initialText": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Starting text for the component"
+    },
     "texts": {
       "type": "array",
       "required": true,
