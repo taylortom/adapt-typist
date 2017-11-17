@@ -9,8 +9,9 @@ define(function(require) {
         .css({
           'font-size': this.model.get('fontSize') + 'px'
         })
+        // TODO we need to render this without the animation
         .typist({
-          speed: 200,
+          speed: 12,
           text: this.model.get('initialText')
         });
 
@@ -23,29 +24,37 @@ define(function(require) {
         return;
       }
       this.$el.off('inview');
-
       this.showText();
-      this.setCompletionStatus();
     },
 
     showText: function() {
       var $text = this.$('.text');
       var index = -1;
       var texts = this.model.get('texts');
-      var loop = this.model.get('loop');
-      var _next = function() {
+      var _next = _.bind(function() {
         if(++index === texts.length) {
-          if(!loop) return;
           index = 0;
+          this.onTypistComplete();
         }
         $text.html('').typist({ speed: 12, text: texts[index] });
-      };
+      }, this);
       $text.on('end_type.typist', function() {
         $text.typistPause(1000).typistRemove($text.text().length, _next);
     	});
+      // add a delay before starting
       window.setTimeout(function() {
         $text.typistRemove($text.text().length, _next);
       }, 1500);
+    },
+
+    onTypistComplete: function() {
+      this.setCompletionStatus();
+      if(this.model.get('loop')) {
+        return;
+      }
+      var $text = this.$('.text');
+      $text.typistStop();
+      $text.html('<p>' + this.model.get('texts').join('</p><p>') + '</p>');
     },
 
     remove: function() {

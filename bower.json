@@ -1,6 +1,7 @@
 {
   "name": "adapt-typist",
-  "version": "0.0.4",
+  "author": "Thomas Taylor <hello@tomtaylor.name>",
+  "version": "0.0.5",
   "framework": "2",
   "homepage": "https://github.com/taylortom/adapt-typist",
   "issues": "https://github.com/taylortom/adapt-typist/issues",
