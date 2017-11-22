@@ -4,6 +4,8 @@ Basic Adapt framework plugin that uses [jquery.typist](https://github.com/albbur
 
 Supports the authoring tool.
 
+**Important note**: still very rough, created as a display plugin for a presentation.
+
 ## Configuration
 
 The following are set in `components.json`:
