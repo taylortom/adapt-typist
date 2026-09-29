@@ -1,3 +1,21 @@
-.text {
-  // font-size: @page-title-font-size;
+.typist {
+  &__text {
+    min-height: 1.4em;
+    white-space: pre-wrap;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      margin: 0 2px;
+      vertical-align: -.1em;
+      background-color: currentColor;
+      animation: typist-blink 1s steps(1) infinite;
+    }
+  }
+}
+
+@keyframes typist-blink {
+  50% { opacity: 0; }
 }

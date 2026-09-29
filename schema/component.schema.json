@@ -1,0 +1,51 @@
+{
+  "$anchor": "typist-component",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$merge": {
+    "source": {
+      "$ref": "component"
+    },
+    "with": {
+      "required": [
+        "texts"
+      ],
+      "properties": {
+        "initialText": {
+          "type": "string",
+          "title": "Initial text",
+          "description": "Shown before the animation starts, then typed over",
+          "default": "",
+          "_adapt": {
+            "translatable": true
+          }
+        },
+        "texts": {
+          "type": "array",
+          "title": "Texts",
+          "description": "The texts to type, in order",
+          "default": [],
+          "items": {
+            "type": "string",
+            "title": "Text",
+            "_adapt": {
+              "translatable": true
+            }
+          }
+        },
+        "loop": {
+          "type": "boolean",
+          "title": "Loop",
+          "description": "Keep typing the texts once the last one is reached. Otherwise they are all shown together at the end",
+          "default": false
+        },
+        "fontSize": {
+          "type": "string",
+          "title": "Font size",
+          "description": "Size of the typed text in px",
+          "default": "20"
+        }
+      }
+    }
+  }
+}
